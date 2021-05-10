@@ -5,9 +5,9 @@ fun main(argumentos : Array<String>) {
         println("Percorrendo os argumentos posição: $indice e valor: ${argumentos[indice]}")
     }
     // for descendo
-    for(indiceDecrescente in argumentos.size-1 downTo 0) {
-        println("Percorrendo os argumentos de forma decrescente posição: $indiceDecrescente" +
-                " e valor: ${argumentos[indiceDecrescente]}")
+    for(indiceDecrescente in argumentos.size-1 downTo 0) {    //o -1 é por causa da posiçao 0
+        println("Percorrendo os argumentos de forma decrescente posição: $indiceDecrescente " +
+                "e valor: ${argumentos[indiceDecrescente]}")
     }
     // for each
     for(argumento in argumentos){
@@ -15,7 +15,18 @@ fun main(argumentos : Array<String>) {
     }
 
     //while
+    var contadorArgumentosLidos = 0
+    while (contadorArgumentosLidos < argumentos.size) {
+        println("Percorrendo os argumentos com while argumentos lidos: ${++contadorArgumentosLidos} " +
+                "valor lido: ${argumentos[contadorArgumentosLidos-1]}")
+    }
 
     //do while
+    var contadorLoopsEfetuados = 0
+    do{
+        println("Percorrendo os argumentos com do while, total loops: ${contadorLoopsEfetuados} " +
+                "e valor lido ${argumentos[contadorLoopsEfetuados]}")
+        contadorLoopsEfetuados++
+    }while (contadorLoopsEfetuados < argumentos.size)
 
 }
